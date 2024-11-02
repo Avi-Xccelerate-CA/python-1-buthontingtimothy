@@ -14,7 +14,7 @@
 def dose(needs):
     #YOUR SOLUTION STARTS HERE
     # check total exceed 500 or not
-    if sum(needs) >= 500 or max(needs) >=250:
+    if sum(needs) >= 500 or max(needs) >= 250:
         return "No medicine given"
     return [(item // 10 + ((item % 10) != 0), (10 - (item % 10)) * ((item % 10) != 0)) for item in needs]
     #YOUR SOLUTION ENDS HERE
