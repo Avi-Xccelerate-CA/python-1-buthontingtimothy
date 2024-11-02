@@ -14,18 +14,7 @@
 def dose(needs):
     #YOUR SOLUTION STARTS HERE
     # check total exceed 500 or not
-    if sum(needs) >= 500:
+    if sum(needs) >= 500 or max(needs) >=250:
         return "No medicine given"
-    
-    for item in needs:
-        if item >= 250:
-            return "No medicine given"
-        
-    solution = []
-    for i in range(len(needs)):
-        vit = needs[i] // 10
-        inj = needs[i] % 10
-        att = vit + (inj != 0), (10 - inj) * (inj != 0)
-        solution.append(att)
-    return solution
+    return [(item // 10 + ((item % 10) != 0), (10 - (item % 10)) * ((item % 10) != 0)) for item in needs]
     #YOUR SOLUTION ENDS HERE
